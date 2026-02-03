@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caleb | Senior Software Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
+
+    :root {
+      --bg-primary: #faf9f6;
+      --text-main: #1a1a1a;
+      --accent: #5e5e5e;
+      --soft-border: #e5e1da;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    .serif {
+      font-family: 'Instrument Serif', serif;
+    }
+
+    .nav-blur {
+      background-color: rgba(250, 249, 246, 0.85);
+      backdrop-filter: blur(12px);
+    }
+
+    .skill-tag {
+      border: 1px solid var(--soft-border);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: white;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--text-main);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    .project-card {
+      transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .project-card:hover {
+      transform: translateY(-12px);
+    }
+
+    .hover-underline {
+      position: relative;
+    }
+
+    .hover-underline::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .hover-underline:hover::after {
+      width: 100%;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #d1d1d1;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-black selection:text-white">
+
+  <!-- Header -->
+  <nav class="fixed w-full z-50 nav-blur border-b border-[#e5e1da] px-6 py-5">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="text-xl font-extrabold tracking-tighter uppercase">
+        Caleb<span class="text-neutral-400">.</span>
+      </div>
+      <div class="hidden md:flex space-x-10 text-[11px] font-bold uppercase tracking-[0.2em] text-[#666]">
+        <a href="#about" class="hover:text-black hover-underline transition-all">Philosophy</a>
+        <a href="#expertise" class="hover:text-black hover-underline transition-all">Stack</a>
+        <a href="#work" class="hover:text-black hover-underline transition-all">Projects</a>
+        <a href="#contact" class="hover:text-black hover-underline transition-all">Contact</a>
+      </div>
+      <a href="#contact" class="hidden md:block text-[11px] font-bold uppercase tracking-[0.2em] bg-black text-white px-6 py-2 rounded-full hover:bg-neutral-800 transition-all">
+        Let's Collaborate
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center pt-24 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7 reveal">
+        <p class="text-[11px] font-bold tracking-[0.4em] uppercase text-[#888] mb-6">Software Engineer & Architect</p>
+        <h1 class="text-7xl md:text-[120px] leading-[0.85] serif font-normal mb-10">
+          Architecting <br> <span class="italic">Scalable</span> Systems.
+        </h1>
+        <p class="text-xl text-[#555] mb-12 max-w-lg leading-relaxed font-light">
+          Building robust, high-performance software solutions by merging technical excellence with intuitive user experiences. Specialized in distributed systems and modern web architecture.
+        </p>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="#work" class="bg-black text-white px-10 py-5 rounded-full font-bold uppercase text-xs tracking-widest hover:bg-neutral-800 transition-all">
+            Selected Projects
+          </a>
+          <div class="flex items-center space-x-4">
+            <span class="w-12 h-px bg-neutral-300"></span>
+            <div class="flex space-x-4 text-sm font-bold uppercase tracking-widest text-[#888]">
+              <a href="#" class="hover:text-black transition-colors">Github</a>
+              <a href="#" class="hover:text-black transition-colors">LinkedIn</a>
+              <a href="#" class="hover:text-black transition-colors">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-5 relative reveal" style="transition-delay: 200ms;">
+        <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
+          <img src="https://i.pinimg.com/736x/20/2a/33/202a33650693f6d8104e5ded2f4b8ad3.jpg" alt="Caleb" class="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-1000">
+        </div>
+        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-[#f0eee9] rounded-full flex items-center justify-center border border-[#e5e1da] hidden lg:flex">
+          <div class="text-center">
+            <p class="text-2xl serif italic">8+</p>
+            <p class="text-[9px] font-bold uppercase tracking-widest">Years of Code</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="py-20 border-y border-[#e5e1da] bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <div class="reveal">
+        <h3 class="text-4xl serif mb-2 italic">50M+</h3>
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">API Requests Daily</p>
+      </div>
+      <div class="reveal" style="transition-delay: 100ms;">
+        <h3 class="text-4xl serif mb-2 italic">25+</h3>
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">Products Shipped</p>
+      </div>
+      <div class="reveal" style="transition-delay: 200ms;">
+        <h3 class="text-4xl serif mb-2 italic">99.9%</h3>
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">System Uptime</p>
+      </div>
+      <div class="reveal" style="transition-delay: 300ms;">
+        <h3 class="text-4xl serif mb-2 italic">15</h3>
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">OSS Contributions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Detailed -->
+  <section id="about" class="py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-20 items-start">
+        <div class="reveal">
+          <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-[#888] mb-8">Engineering Philosophy</h2>
+          <p class="text-4xl serif leading-[1.1] mb-12">
+            "Great software is not just about writing code; it's about <span class="italic underline decoration-neutral-200 underline-offset-8">managing complexity</span> to serve human needs."
+          </p>
+          <div class="space-y-6 text-neutral-600 leading-relaxed font-light">
+            <p>Caleb is a Senior Software Engineer with a passion for building systems that are as elegant internally as they are externally. With a background in Computer Science and years of experience in high-growth tech environments, he focuses on writing clean, maintainable code that scales.</p>
+            <p>He believes in the "boring technology" movement—leveraging proven, stable tools to solve complex problems reliably, while staying at the forefront of innovation in cloud-native ecosystems and AI integration.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay: 200ms;">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600" class="rounded-2xl aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Codebase">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=600" class="rounded-2xl aspect-[3/4] object-cover mt-12 grayscale hover:grayscale-0 transition-all duration-700" alt="Architecture">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Education -->
+  <section class="py-32 px-6 bg-white border-y border-[#e5e1da]">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-20">
+        <div class="reveal">
+          <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-[#888] mb-12">Education</h2>
+          <div class="space-y-12">
+            <div class="border-l-2 border-black pl-6">
+              <h3 class="text-2xl serif italic mb-2">B.Sc. Computer Science</h3>
+              <p class="text-sm font-bold text-neutral-600 mb-3">University of Nairobi • 2013-2017</p>
+              <p class="text-sm text-neutral-600 leading-relaxed">Focus on algorithms, distributed systems, and software engineering. Graduated with First Class Honours.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay: 200ms;">
+          <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-[#888] mb-12">Certifications</h2>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4 p-6 border border-neutral-200 rounded-xl hover:border-black transition-colors group">
+              <i class="fas fa-certificate text-2xl text-neutral-300 group-hover:text-black transition-colors mt-1"></i>
+              <div>
+                <h4 class="font-bold mb-1">AWS Certified Solutions Architect – Professional</h4>
+                <p class="text-xs text-neutral-500 uppercase tracking-widest">Amazon Web Services • 2023</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-6 border border-neutral-200 rounded-xl hover:border-black transition-colors group">
+              <i class="fas fa-certificate text-2xl text-neutral-300 group-hover:text-black transition-colors mt-1"></i>
+              <div>
+                <h4 class="font-bold mb-1">Certified Kubernetes Administrator (CKA)</h4>
+                <p class="text-xs text-neutral-500 uppercase tracking-widest">Cloud Native Computing Foundation • 2022</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-6 border border-neutral-200 rounded-xl hover:border-black transition-colors group">
+              <i class="fas fa-certificate text-2xl text-neutral-300 group-hover:text-black transition-colors mt-1"></i>
+              <div>
+                <h4 class="font-bold mb-1">Google Cloud Professional Cloud Architect</h4>
+                <p class="text-xs text-neutral-500 uppercase tracking-widest">Google Cloud • 2021</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Timeline -->
+  <section id="experience" class="py-32 px-6 bg-white border-y border-[#e5e1da]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-24 reveal">
+        <h2 class="text-5xl md:text-7xl serif italic mb-4">Professional Journey</h2>
+        <p class="text-neutral-500 uppercase tracking-widest text-[10px] font-bold">Building Excellence Across Organizations</p>
+      </div>
+
+      <div class="space-y-16">
+        <div class="grid md:grid-cols-12 gap-12 items-start reveal border-l-2 border-black pl-8">
+          <div class="md:col-span-3">
+            <p class="text-2xl serif italic mb-2">2021 — Present</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">3+ Years</p>
+          </div>
+          <div class="md:col-span-9">
+            <h3 class="text-3xl serif mb-4">Senior Software Engineer</h3>
+            <p class="text-neutral-600 font-bold mb-6">TechVentures Inc. • Remote</p>
+            <p class="text-neutral-600 leading-relaxed mb-6">Leading the architecture and development of a multi-tenant SaaS platform serving 50,000+ active users. Spearheading the migration from monolithic architecture to event-driven microservices.</p>
+            <ul class="space-y-3 text-sm text-neutral-600">
+              <li class="flex items-start"><span class="text-black mr-3">•</span> Reduced API response times by 65% through caching strategies and query optimization</li>
+              <li class="flex items-start"><span class="text-black mr-3">•</span> Implemented real-time data sync using WebSockets and Redis Pub/Sub</li>
+              <li class="flex items-start"><span class="text-black mr-3">•</span> Mentored 5 junior engineers on system design and best practices</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-12 items-start reveal border-l-2 border-neutral-300 pl-8">
+          <div class="md:col-span-3">
+            <p class="text-2xl serif italic mb-2">2019 — 2021</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">2 Years</p>
+          </div>
+          <div class="md:col-span-9">
+            <h3 class="text-3xl serif mb-4">Full Stack Engineer</h3>
+            <p class="text-neutral-600 font-bold mb-6">DataFlow Systems • Hybrid</p>
+            <p class="text-neutral-600 leading-relaxed mb-6">Built scalable data processing pipelines and customer-facing dashboards for enterprise clients in the fintech sector.</p>
+            <ul class="space-y-3 text-sm text-neutral-600">
+              <li class="flex items-start"><span class="text-black mr-3">•</span> Architected ETL pipelines processing 10M+ records daily</li>
+              <li class="flex items-start"><span class="text-black mr-3">•</span> Developed React-based analytics dashboard with real-time updates</li>
+              <li class="flex items-start"><span class="text-black mr-3">•</span> Established CI/CD pipelines reducing deployment time by 80%</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-12 items-start reveal border-l-2 border-neutral-300 pl-8">
+          <div class="md:col-span-3">
+            <p class="text-2xl serif italic mb-2">2017 — 2019</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">2 Years</p>
+          </div>
+          <div class="md:col-span-9">
+            <h3 class="text-3xl serif mb-4">Software Developer</h3>
+            <p class="text-neutral-600 font-bold mb-6">CloudCore Systems • On-site</p>
+            <p class="text-neutral-600 leading-relaxed mb-6">Contributed to cloud infrastructure management tools and internal developer platforms.</p>
+            <ul class="space-y-3 text-sm text-neutral-600">
+              <li class="flex items-start"><span class="text-black mr-3">•</span> Built Kubernetes operators for automated application deployment</li>
+              <li class="flex items-start"><span class="text-black mr-3">•</span> Developed CLI tools used by 200+ internal engineers</li>
+              <li class="flex items-start"><span class="text-black mr-3">•</span> Participated in on-call rotation maintaining 99.9% uptime</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Technologies Showcase -->
+  <section class="py-32 px-6 bg-white border-y border-[#e5e1da]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20 reveal">
+        <h2 class="text-5xl md:text-7xl serif italic mb-4">Tech Arsenal</h2>
+        <p class="text-neutral-500 uppercase tracking-widest text-[10px] font-bold">Tools I Use Daily</p>
+      </div>
+
+      <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-8">
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fab fa-docker"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Docker</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 50ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fab fa-git-alt"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Git</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 100ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fab fa-github"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">GitHub</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 150ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fab fa-aws"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">AWS</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 200ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fab fa-node-js"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Node.js</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 250ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fab fa-react"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">React</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 300ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fab fa-python"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Python</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 350ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fab fa-figma"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Figma</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 400ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fas fa-database"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">PostgreSQL</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 450ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fas fa-fire"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Redis</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 500ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">GraphQL</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 550ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fas fa-terminal"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Linux</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 600ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Grafana</span>
+        </div>
+
+        <div class="reveal flex flex-col items-center gap-4 p-6 rounded-2xl hover:bg-neutral-50 transition-all group" style="transition-delay: 650ms;">
+          <div class="w-16 h-16 flex items-center justify-center text-4xl text-neutral-400 group-hover:text-black transition-colors">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest text-neutral-500">Security</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Expertise -->
+  <section id="expertise" class="py-32 px-6 bg-white border-y border-[#e5e1da]">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
+        <div class="reveal">
+          <h2 class="text-5xl md:text-7xl serif italic mb-4">Core Expertise</h2>
+          <p class="text-neutral-500 uppercase tracking-widest text-[10px] font-bold">The Technical Toolkit</p>
+        </div>
+        <div class="reveal md:text-right max-w-sm">
+          <p class="text-sm text-neutral-600 italic">Mastering the stack from low-level infrastructure to high-level frontend interfaces.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div class="reveal group">
+          <div class="h-px w-full bg-neutral-200 mb-10 group-hover:bg-black transition-colors"></div>
+          <h3 class="text-2xl serif mb-6">Backend & Architecture</h3>
+          <p class="text-sm text-[#666] mb-8 leading-relaxed">Designing high-concurrency microservices and resilient data pipelines. Focus on performance tuning and API design.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">Go / Rust</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">gRPC</span>
+          </div>
+        </div>
+        <div class="reveal group" style="transition-delay: 100ms;">
+          <div class="h-px w-full bg-neutral-200 mb-10 group-hover:bg-black transition-colors"></div>
+          <h3 class="text-2xl serif mb-6">Cloud & DevOps</h3>
+          <p class="text-sm text-[#666] mb-8 leading-relaxed">Automating infrastructure as code and managing containerized orchestrations at scale across multiple regions.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">AWS / GCP</span>
+            <span class="skill-tag">CI/CD</span>
+          </div>
+        </div>
+        <div class="reveal group" style="transition-delay: 200ms;">
+          <div class="h-px w-full bg-neutral-200 mb-10 group-hover:bg-black transition-colors"></div>
+          <h3 class="text-2xl serif mb-6">Frontend Engineering</h3>
+          <p class="text-sm text-[#666] mb-8 leading-relaxed">Crafting immersive, type-safe user interfaces with a focus on accessibility, speed, and design systems.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">React / Next.js</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Tailwind</span>
+            <span class="skill-tag">Three.js</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lab Gallery / Stack Detail -->
+  <section class="py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-center text-xs font-bold tracking-[0.3em] uppercase text-[#888] mb-20">Infrastructure & Tooling</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="reveal"><img src="https://i.pinimg.com/1200x/ed/1b/25/ed1b258e6de6056dce473d152982d447.jpg" class="w-full h-80 object-cover rounded-2xl grayscale hover:grayscale-0 transition-all" alt="Servers"></div>
+        <div class="reveal" style="transition-delay: 100ms;"><img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=600" class="w-full h-80 object-cover rounded-2xl grayscale hover:grayscale-0 transition-all mt-8" alt="Frontend Code"></div>
+        <div class="reveal" style="transition-delay: 200ms;"><img src="https://i.pinimg.com/736x/56/f1/56/56f156c82c72af1d7a274c6ce854ee9a.jpg" class="w-full h-80 object-cover rounded-2xl grayscale hover:grayscale-0 transition-all" alt="Workspace"></div>
+        <div class="reveal" style="transition-delay: 300ms;"><img src="https://i.pinimg.com/736x/64/47/60/6447606c5e6465b2db6193ef6f39f176.jpg" class="w-full h-80 object-cover rounded-2xl grayscale hover:grayscale-0 transition-all mt-8" alt="System Analysis"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies / Work -->
+  <section id="work" class="py-32 px-6 bg-[#f0eee9]">Debug mode/debug/
+https://codepen.io/pen/debug/qENOVvX
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between items-end mb-24">
+        <div class="reveal">
+          <h2 class="text-5xl md:text-7xl serif italic">Engineering Feats</h2>
+        </div>
+        <div class="reveal">
+          <a href="#" class="text-[11px] font-bold uppercase tracking-[0.2em] hover-underline">Github Repositories</a>
+        </div>
+      </div>
+      <div class="space-y-32">
+        <!-- Project 01 -->
+        <div class="grid md:grid-cols-2 gap-16 items-center reveal">
+          <div class="project-card rounded-3xl overflow-hidden shadow-xl">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" class="w-full aspect-square md:aspect-video object-cover" alt="Analytics Platform">
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-4 block">01 / Real-time Data</span>
+            <h3 class="text-4xl serif mb-6 italic">FluxEngine: Streaming Analytics</h3>
+            <p class="text-neutral-600 leading-relaxed mb-8">Architected a distributed streaming engine capable of processing 100k events per second with sub-100ms latency. Used Rust for high-performance ingestion and Kafka for message brokering.</p>
+            <ul class="space-y-2 mb-10 text-sm font-medium italic">
+              <li>— Rust / Tokio</li>
+              <li>— Apache Kafka & Redis</li>
+              <li>— Automated Scale-out on K8s</li>
+            </ul>
+            <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] border-b border-black pb-2 hover:text-neutral-500 transition-colors">System Architecture →</a>
+          </div>
+        </div>
+
+        <!-- Project 02 -->
+        <div class="grid md:grid-cols-2 gap-16 items-center reveal">
+          <div class="md:order-2 project-card rounded-3xl overflow-hidden shadow-xl">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200" class="w-full aspect-square md:aspect-video object-cover" alt="E-commerce">
+          </div>
+          <div class="md:order-1 md:text-right">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-4 block">02 / Fullstack SaaS</span>
+            <h3 class="text-4xl serif mb-6 italic">Zenith Commerce Platform</h3>
+            <p class="text-neutral-600 leading-relaxed mb-8">Developed a headless e-commerce solution with a focus on core web vitals and developer experience. Achieved a 99/100 Lighthouse score for the entire storefront.</p>
+            <ul class="space-y-2 mb-10 text-sm font-medium italic md:flex md:space-x-8 md:space-y-0 md:justify-end">
+              <li>— Next.js / TypeScript</li>
+              <li>— PostgreSQL / Prisma</li>
+              <li>— GraphQL API Design</li>
+            </ul>
+            <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] border-b border-black pb-2 hover:text-neutral-500 transition-colors">Case Study →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="py-32 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <div class="mb-12">
+        <i class="fas fa-quote-left text-4xl text-neutral-100"></i>
+      </div>
+      <p class="text-3xl serif italic leading-snug mb-12">
+        "Caleb possesses a rare combination of deep architectural knowledge and a pragmatic approach to delivery. He transformed our legacy monolith into a modern, scalable ecosystem without a single day of downtime."
+      </p>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest">Sarah Jenkins</p>
+        <p class="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">VP of Engineering, CloudCore Systems</p>
+      </div>
+    </div>
+  </section>
+  <!-- Technical Deep Dive (New UI) -->
+  <section id="stack" class="py-40 px-8">
+    <div class="max-w-[1600px] mx-auto">
+      <div class="grid lg:grid-cols-12 gap-32">
+        <div class="lg:col-span-4 reveal">
+          <h3 class="text-xs font-black uppercase tracking-[0.5em] text-neutral-600 mb-12">The Toolset</h3>
+          <h4 class="text-6xl serif italic mb-12">Battle-tested <br> technologies.</h4>
+          <p class="text-neutral-500 font-light leading-relaxed mb-12">
+            I am a language-agnostic engineer who believes in picking the right tool for the specific performance profile of the problem.
+          </p>
+          <div class="space-y-4">
+            <div class="p-6 glass rounded-xl flex justify-between items-center group cursor-pointer hover:bg-white/5 transition-all">
+              <span class="font-bold uppercase text-[10px] tracking-[0.3em]">Mastery</span>
+              <span class="text-neutral-500 group-hover:text-white transition-colors">Go, Rust, TypeScript</span>
+            </div>
+            <div class="p-6 glass rounded-xl flex justify-between items-center group cursor-pointer hover:bg-white/5 transition-all">
+              <span class="font-bold uppercase text-[10px] tracking-[0.3em]">Persistence</span>
+              <span class="text-neutral-500 group-hover:text-white transition-colors">PGSQL, Redis, Clickhouse</span>
+            </div>
+            <div class="p-6 glass rounded-xl flex justify-between items-center group cursor-pointer hover:bg-white/5 transition-all">
+              <span class="font-bold uppercase text-[10px] tracking-[0.3em]">Infra</span>
+              <span class="text-neutral-500 group-hover:text-white transition-colors">K8s, Terraform, AWS</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-8 reveal">
+          <!-- Architectural Blueprint Mockup -->
+          <div class="w-full h-[600px] glass rounded-3xl relative overflow-hidden flex items-center justify-center bg-black/40">
+            <div class="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+
+            <!-- Visualizing a System Design flow with SVGs -->
+            <div class="relative w-full h-full p-12">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg space-y-12">
+                <div class="flex justify-between items-center gap-4">
+                  <div class="w-32 h-32 border border-white/20 rounded-lg flex items-center justify-center text-[10px] uppercase font-bold tracking-widest text-center">Load <br> Balancer</div>
+                  <div class="h-[1px] flex-1 bg-gradient-to-r from-white/20 to-transparent"></div>
+                  <div class="w-32 h-32 border border-white/20 rounded-lg flex items-center justify-center text-[10px] uppercase font-bold tracking-widest text-center">Api <br> Gateway</div>
+                </div>
+                <div class="flex justify-center">
+                  <div class="w-48 h-12 border border-green-500/50 bg-green-500/5 rounded-lg flex items-center justify-center text-[8px] uppercase font-black tracking-[0.3em] text-green-500">Distributed Cache Cluster</div>
+                </div>
+                <div class="flex justify-between items-center gap-4">
+                  <div class="w-32 h-32 border border-white/20 rounded-lg flex items-center justify-center text-[10px] uppercase font-bold tracking-widest text-center">Service <br> A (Go)</div>
+                  <div class="w-32 h-32 border border-white/20 rounded-lg flex items-center justify-center text-[10px] uppercase font-bold tracking-widest text-center">Service <br> B (Rust)</div>
+                  <div class="w-32 h-32 border border-white/20 rounded-lg flex items-center justify-center text-[10px] uppercase font-bold tracking-widest text-center">Service <br> C (Go)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute bottom-8 right-8 text-[10px] font-black uppercase tracking-[0.5em] text-neutral-700">
+              Core Architecture Diagram V.2.0
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Writing & Talks -->
+  <section id="content" class="py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
+        <div class="reveal">
+          <h2 class="text-5xl md:text-7xl serif italic mb-4">Sharing Knowledge</h2>
+          <p class="text-neutral-500 uppercase tracking-widest text-[10px] font-bold">Technical Writing & Speaking</p>
+        </div>
+        <div class="reveal">
+          <a href="#" class="text-[11px] font-bold uppercase tracking-[0.2em] hover-underline">View All Articles</a>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 mb-20">
+        <article class="reveal group cursor-pointer">
+          <div class="aspect-[16/9] bg-neutral-200 rounded-2xl mb-6 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Microservices">
+          </div>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-3 block">System Design • 12 min read</span>
+          <h3 class="text-2xl serif mb-4 group-hover:text-neutral-600 transition-colors">Building Resilient Microservices: Lessons from Production</h3>
+          <p class="text-neutral-600 leading-relaxed mb-4">Exploring circuit breakers, retry strategies, and graceful degradation patterns that keep systems running under stress.</p>
+          <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline">Read Article →</a>
+        </article>
+
+        <article class="reveal group cursor-pointer" style="transition-delay: 100ms;">
+          <div class="aspect-[16/9] bg-neutral-200 rounded-2xl mb-6 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Performance">
+          </div>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-3 block">Performance • 15 min read</span>
+          <h3 class="text-2xl serif mb-4 group-hover:text-neutral-600 transition-colors">Zero to 100k RPS: A Database Optimization Journey</h3>
+          <p class="text-neutral-600 leading-relaxed mb-4">How we scaled our PostgreSQL database to handle massive concurrent loads through indexing, connection pooling, and read replicas.</p>
+          <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline">Read Article →</a>
+        </article>
+
+        <article class="reveal group cursor-pointer" style="transition-delay: 200ms;">
+          <div class="aspect-[16/9] bg-neutral-200 rounded-2xl mb-6 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Team">
+          </div>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-3 block">Leadership • 8 min read</span>
+          <h3 class="text-2xl serif mb-4 group-hover:text-neutral-600 transition-colors">Engineering Culture: Code Reviews That Don't Suck</h3>
+          <p class="text-neutral-600 leading-relaxed mb-4">Building a collaborative review process that improves code quality while maintaining team morale and velocity.</p>
+          <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline">Read Article →</a>
+        </article>
+
+        <article class="reveal group cursor-pointer" style="transition-delay: 300ms;">
+          <div class="aspect-[16/9] bg-neutral-200 rounded-2xl mb-6 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="DevOps">
+          </div>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-3 block">DevOps • 10 min read</span>
+          <h3 class="text-2xl serif mb-4 group-hover:text-neutral-600 transition-colors">Infrastructure as Code: Terraform Best Practices for 2024</h3>
+          <p class="text-neutral-600 leading-relaxed mb-4">A comprehensive guide to organizing Terraform projects, managing state, and implementing safe deployment workflows.</p>
+          <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline">Read Article →</a>
+        </article>
+      </div>
+
+      <div class="bg-[#f0eee9] rounded-3xl p-12 reveal">
+        <h3 class="text-xs font-bold tracking-[0.3em] uppercase text-[#888] mb-8">Conference Talks</h3>
+        <div class="space-y-8">
+          <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 pb-8 border-b border-neutral-300">
+            <div>
+              <h4 class="text-xl serif italic mb-2">From Monolith to Microservices: A Migration Story</h4>
+              <p class="text-sm text-neutral-600">DevOps Africa Summit 2023 • Nairobi, Kenya</p>
+            </div>
+            <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline whitespace-nowrap">Watch Recording →</a>
+          </div>
+          <div class="flex flex-col md:flex-row justify-between md:items-center gap-4 pb-8 border-b border-neutral-300">
+            <div>
+              <h4 class="text-xl serif italic mb-2">Building Real-time Systems with Go and Kafka</h4>
+              <p class="text-sm text-neutral-600">GopherCon 2022 • Virtual</p>
+            </div>
+            <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline whitespace-nowrap">Watch Recording →</a>
+          </div>
+          <div class="flex flex-col md:flex-row justify-between md:items-center gap-4">
+            <div>
+              <h4 class="text-xl serif italic mb-2">The Art of API Design: REST, GraphQL, and Beyond</h4>
+              <p class="text-sm text-neutral-600">API World 2021 • San Francisco, CA</p>
+            </div>
+            <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline whitespace-nowrap">Watch Recording →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Source & Side Projects -->
+  <section class="py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-24 reveal">
+        <h2 class="text-5xl md:text-7xl serif italic mb-4">Open Source Contributions</h2>
+        <p class="text-neutral-500 uppercase tracking-widest text-[10px] font-bold">Giving Back to the Community</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="reveal p-8 border border-neutral-200 rounded-2xl hover:border-black transition-all group">
+          <div class="flex items-start justify-between mb-6">
+            <i class="fab fa-github text-4xl text-neutral-300 group-hover:text-black transition-colors"></i>
+            <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">Active</span>
+          </div>
+          <h3 class="text-xl serif italic mb-3">kubernetes/kubectl</h3>
+          <p class="text-sm text-neutral-600 mb-4 leading-relaxed">Contributed performance improvements and bug fixes to the Kubernetes command-line tool.</p>
+          <div class="flex gap-2 flex-wrap mb-4">
+            <span class="text-[9px] px-2 py-1 bg-neutral-100 rounded-full uppercase tracking-wider">Go</span>
+            <span class="text-[9px] px-2 py-1 bg-neutral-100 rounded-full uppercase tracking-wider">CLI</span>
+          </div>
+          <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline">View PRs →</a>
+        </div>
+
+        <div class="reveal p-8 border border-neutral-200 rounded-2xl hover:border-black transition-all group" style="transition-delay: 100ms;">
+          <div class="flex items-start justify-between mb-6">
+            <i class="fab fa-github text-4xl text-neutral-300 group-hover:text-black transition-colors"></i>
+            <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">Maintainer</span>
+          </div>
+          <h3 class="text-xl serif italic mb-3">redis-lite</h3>
+          <p class="text-sm text-neutral-600 mb-4 leading-relaxed">A lightweight Redis client library for Node.js with TypeScript support and connection pooling.</p>
+          <div class="flex gap-2 flex-wrap mb-4">
+            <span class="text-[9px] px-2 py-1 bg-neutral-100 rounded-full uppercase tracking-wider">TypeScript</span>
+            <span class="text-[9px] px-2 py-1 bg-neutral-100 rounded-full uppercase tracking-wider">Database</span>
+          </div>
+          <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline">View Repo →</a>
+        </div>
+
+        <div class="reveal p-8 border border-neutral-200 rounded-2xl hover:border-black transition-all group" style="transition-delay: 200ms;">
+          <div class="flex items-start justify-between mb-6">
+            <i class="fab fa-github text-4xl text-neutral-300 group-hover:text-black transition-colors"></i>
+            <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">Creator</span>
+          </div>
+          <h3 class="text-xl serif italic mb-3">terraform-aws-ecs-service</h3>
+          <p class="text-sm text-neutral-600 mb-4 leading-relaxed">Terraform module for deploying ECS services with autoscaling, load balancing, and service discovery.</p>
+          <div class="flex gap-2 flex-wrap mb-4">
+            <span class="text-[9px] px-2 py-1 bg-neutral-100 rounded-full uppercase tracking-wider">HCL</span>
+            <span class="text-[9px] px-2 py-1 bg-neutral-100 rounded-full uppercase tracking-wider">IaC</span>
+          </div>
+          <a href="#" class="text-xs font-bold uppercase tracking-[0.2em] hover-underline">View Repo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-32 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-20 reveal">
+        <h2 class="text-5xl md:text-7xl serif italic mb-4">Common Questions</h2>
+        <p class="text-neutral-500 uppercase tracking-widest text-[10px] font-bold">What Clients Usually Ask</p>
+      </div>
+
+      <div class="space-y-6">
+        <details class="reveal group p-8 border border-neutral-200 rounded-2xl hover:border-black transition-all">
+          <summary class="cursor-pointer flex justify-between items-center">
+            <h3 class="text-xl serif italic">What's your typical engagement model?</h3>
+            <i class="fas fa-chevron-down text-neutral-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-6 text-neutral-600 leading-relaxed">I work on both contract and full-time basis depending on the project scope. For consulting engagements, I prefer 3-6 month commitments to ensure meaningful impact. I'm flexible with remote work but available for on-site visits when necessary.</p>
+        </details>
+
+        <details class="reveal group p-8 border border-neutral-200 rounded-2xl hover:border-black transition-all" style="transition-delay: 100ms;">
+          <summary class="cursor-pointer flex justify-between items-center">
+            <h3 class="text-xl serif italic">What industries have you worked in?</h3>
+            <i class="fas fa-chevron-down text-neutral-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-6 text-neutral-600 leading-relaxed">My experience spans fintech, e-commerce, SaaS platforms, IoT, and healthcare tech. I've built payment processing systems, inventory management platforms, real-time analytics dashboards, and compliance-focused applications. This diverse background helps me bring best practices from different domains.</p>
+        </details>
+
+        <details class="reveal group p-8 border border-neutral-200 rounded-2xl hover:border-black transition-all" style="transition-delay: 200ms;">
+          <summary class="cursor-pointer flex justify-between items-center">
+            <h3 class="text-xl serif italic">How do you approach legacy system migrations?</h3>
+            <i class="fas fa-chevron-down text-neutral-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-6 text-neutral-600 leading-relaxed">I use the strangler fig pattern—gradually replacing old components while maintaining system stability. This involves building new services alongside legacy code, implementing feature flags, comprehensive testing, and zero-downtime deployment strategies. The goal is continuous delivery without disrupting operations.</p>
+        </details>
+
+        <details class="reveal group p-8 border border-neutral-200 rounded-2xl hover:border-black transition-all" style="transition-delay: 300ms;">
+          <summary class="cursor-pointer flex justify-between items-center">
+            <h3 class="text-xl serif italic">Do you work with startups or enterprises?</h3>
+            <i class="fas fa-chevron-down text-neutral-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-6 text-neutral-600 leading-relaxed">Both! Startups benefit from my ability to build MVPs quickly and establish solid technical foundations for scaling. Enterprises value my experience with complex migrations, system optimization, and mentoring engineering teams. Each has unique challenges that I find equally rewarding.</p>
+        </details>
+
+        <details class="reveal group p-8 border border-neutral-200 rounded-2xl hover:border-black transition-all" style="transition-delay: 400ms;">
+          <summary class="cursor-pointer flex justify-between items-center">
+            <h3 class="text-xl serif italic">What's your communication style during projects?</h3>
+            <i class="fas fa-chevron-down text-neutral-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-6 text-neutral-600 leading-relaxed">I believe in transparent, frequent communication. Weekly progress reports, bi-weekly demos, and daily async updates via Slack or similar tools. I document decisions in ADRs (Architecture Decision Records) and maintain updated technical documentation. You'll always know the project status, blockers, and next steps.</p>
+        </details>
+
+        <details class="reveal group p-8 border border-neutral-200 rounded-2xl hover:border-black transition-all" style="transition-delay: 500ms;">
+          <summary class="cursor-pointer flex justify-between items-center">
+            <h3 class="text-xl serif italic">How do you handle scope changes?</h3>
+            <i class="fas fa-chevron-down text-neutral-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="mt-6 text-neutral-600 leading-relaxed">Agile methodology embraces change. We prioritize features in the backlog, and scope adjustments are discussed during sprint planning. I provide impact assessments for changes—how they affect timeline, budget, and technical complexity. The goal is flexibility while maintaining project momentum and quality.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-32 px-6 border-t border-[#e5e1da]">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-start">
+      <div class="reveal">
+        <h2 class="text-6xl md:text-8xl serif italic mb-10 leading-[0.85]">Let's build <br> <span class="text-neutral-300">future</span>-proof code.</h2>
+        <div class="space-y-8 mt-16">
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-2">Collaboration</p>
+            <a href="mailto:caleb@engineering.dev" class="text-2xl serif hover:text-neutral-500 transition-colors italic">caleb@engineering.dev</a>
+          </div>
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-2">Based In</p>
+            <p class="text-xl serif italic">Nairobi, Kenya / Remote</p>
+          </div>
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 mb-2">Availability</p>
+            <p class="text-xl serif italic">Open for consulting & contract work</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay: 200ms;">
+        <form class="space-y-10" onsubmit="event.preventDefault();">
+          <div class="group relative">
+            <label class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 absolute -top-6 left-0 transition-all group-focus-within:text-black">Project Name / Company</label>
+            <input type="text" placeholder="Your organization" class="w-full bg-transparent border-b border-[#ccc] py-4 focus:border-black outline-none transition-all placeholder:text-neutral-300">
+          </div>
+          <div class="group relative">
+            <label class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 absolute -top-6 left-0 transition-all group-focus-within:text-black">Interest</label>
+            <select class="w-full bg-transparent border-b border-[#ccc] py-4 focus:border-black outline-none transition-all text-neutral-400">
+              <option>System Architecture</option>
+              <option>Product Development</option>
+              <option>Technical Consulting</option>
+              <option>Legacy Migration</option>
+            </select>
+          </div>
+          <div class="group relative">
+            <label class="text-[10px] font-bold uppercase tracking-widest text-neutral-400 absolute -top-6 left-0 transition-all group-focus-within:text-black">Project Details</label>
+            <textarea rows="4" placeholder="Briefly describe the engineering challenge..." class="w-full bg-transparent border-b border-[#ccc] py-4 focus:border-black outline-none transition-all placeholder:text-neutral-300"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-black text-white py-6 rounded-full font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-neutral-800 transition-all shadow-lg">
+            Submit Brief
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 border-t border-[#e5e1da] bg-white text-center">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-[0.2em] text-[#888] gap-8">
+      <p>© 2026 Caleb Studio. All Rights Reserved.</p>
+      <div class="flex space-x-8">
+        <a href="#" class="hover:text-black">Github</a>
+        <a href="#" class="hover:text-black">Twitter</a>
+        <a href="#" class="hover:text-black">StackOverflow</a>
+        <a href="#" class="hover:text-black">LinkedIn</a>
+      </div>
+      <p>Built By Kally Synex With Passion & Precision</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll Reveal Logic
+    const revealElements = document.querySelectorAll('.reveal');
+    const reveal = () => {
+      revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+          el.classList.add('active');
+        }
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+    // Simple smooth scroll enhancement
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
